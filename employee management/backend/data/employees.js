@@ -1,0 +1,66 @@
+const employees = [
+  {
+    firstName: "Alfred",
+    lastName: "Christensen",
+    email: "alfred@example.com",
+    position: "Dentist",
+    department: "General Dentistry",
+  },
+  {
+    firstName: "John",
+    lastName: "Dudley",
+    email: "john@example.com",
+    position: "Dentist",
+    department: "General Dentistry",
+  },
+  {
+    firstName: "Janet",
+    lastName: "Doe",
+    email: "janet@example.com",
+    position: "Dentist",
+    department: "General Dentistry",
+  },
+  {
+    firstName: "Francisco",
+    lastName: "Willard",
+    email: "francisco@example.com",
+    position: "Dentist",
+    department: "Pediatric Dentistry",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Alvarez",
+    email: "sarah@example.com",
+    position: "Dentist",
+    department: "Pediatric Dentistry",
+  },
+  {
+    firstName: "Lisa",
+    lastName: "Harris",
+    email: "lisa@example.com",
+    position: "Dentist",
+    department: "Restorative Dentistry",
+  },
+  {
+    firstName: "Danny",
+    lastName: "Perez",
+    email: "danny@example.com",
+    position: "Dentist",
+    department: "Restorative Dentistry",
+  },
+  {
+    firstName: "Constance",
+    lastName: "Smith",
+    email: "constance@example.com",
+    position: "Surgeon",
+    department: "Surgery",
+  },
+  {
+    firstName: "Leslie",
+    lastName: "Roche",
+    email: "leslie@example.com",
+    position: "Orthodontist",
+    department: "Orthodontics",
+  },
+];
+export default employees;
