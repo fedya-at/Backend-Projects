@@ -87,6 +87,21 @@ const updateDepartment = asyncHandler(async (req, res) => {
     throw new Error("Department Not Found");
   }
 });
+const searchDepartments = async (req, res) => {
+  try {
+    const query = req.query.query;
+    const departments = await Department.find({
+      $or: [
+        { name: { $regex: query, $options: "i" } },
+      ],
+    });
+
+    res.json(departments);
+  } catch (error) {
+    console.error("Error searching departments:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 export {
   getDepartments,
@@ -94,4 +109,5 @@ export {
   deleteDepartment,
   createDepartment,
   updateDepartment,
+  searchDepartments,
 };

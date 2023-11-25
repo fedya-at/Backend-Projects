@@ -95,6 +95,29 @@ const updateEmployee = asyncHandler(async (req, res) => {
     throw new Error("Employee Not Found");
   }
 });
+const searchEmployees = async (req, res) => {
+  try {
+    const query = req.query.query;
+    console.log("Received query:", query);
+
+    const employees = await Employee.find({
+      $or: [
+        { firstName: { $regex: new RegExp(query, "i") } },
+        { lastName: { $regex: new RegExp(query, "i") } },
+        { email: { $regex: new RegExp(query, "i") } },
+        { position: { $regex: new RegExp(query, "i") } },
+        { department: { $regex: new RegExp(query, "i") } },
+      ],
+    });
+
+    console.log("Found employees:", employees);
+
+    res.json(employees);
+  } catch (error) {
+    console.error("Error searching employees:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 export {
   getEmployees,
@@ -102,4 +125,5 @@ export {
   deleteEmployee,
   createEmployee,
   updateEmployee,
+  searchEmployees,
 };
